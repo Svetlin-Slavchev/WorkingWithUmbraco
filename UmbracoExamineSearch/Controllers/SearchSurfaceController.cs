@@ -9,8 +9,6 @@ namespace UmbracoExamineSearch.Controllers
 {
     public class SearchSurfaceController : SurfaceController
     {
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Search(SearchModel model)
         {
             if (!ModelState.IsValid)

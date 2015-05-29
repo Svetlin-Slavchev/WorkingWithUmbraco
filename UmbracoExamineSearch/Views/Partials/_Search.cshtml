@@ -2,10 +2,8 @@
 @using UmbracoExamineSearch.Controllers
 @using UmbracoExamineSearch.Models
 
-@using (Html.BeginUmbracoForm<SearchSurfaceController>("Search", FormMethod.Post))
+@using (Html.BeginUmbracoForm<SearchSurfaceController>("Search", FormMethod.Get))
 {
-    @Html.AntiForgeryToken()
-
     <fieldset>
         <div>
             @Html.TextBoxFor(x => x.SearchText)
