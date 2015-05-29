@@ -1,0 +1,16 @@
+﻿﻿@inherits UmbracoViewPage<SearchModel>
+@using UmbracoExamineSearch.Controllers
+@using UmbracoExamineSearch.Models
+
+@using (Html.BeginUmbracoForm<SearchSurfaceController>("Search", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div>
+            @Html.TextBoxFor(x => x.SearchText)
+            @Html.ValidationMessageFor(x => x.SearchText)
+        </div>
+    </fieldset>
+    <input type="submit" value="Search" />
+}

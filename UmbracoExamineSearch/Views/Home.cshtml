@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@{ Html.RenderPartial("_Search", new UmbracoExamineSearch.Models.SearchModel()); }
+
+@if (ViewBag.SearchResults != null)
+{
+    <ul>
+        @foreach (Examine.SearchResult result in ViewBag.SearchResults)
+        {
+            <li>
+                @* If search result is IPublishedContent *@
+                @*<a href="@result.Url">@result.Name</a>*@
+
+                <a href="@("/" + result["urlName"])">@result["nodeName"]</a>
+            </li>
+        }
+    </ul>
+}
+
+@CurrentPage.GetGridHtml("content", "fanoe")
